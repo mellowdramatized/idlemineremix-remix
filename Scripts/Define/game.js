@@ -125,7 +125,7 @@ var game =
                 {index: 112, obj: new MineObject("Kepler-7b", 500e48, 1.25e48, 75e69, ["#161616", "transparent", "#66c172", "#039d00"], 23, {drops:{planetcoin: {chance: 0.01, amount: 120}}})},
                 {index: 113, obj: new MineObject("WASP-78b", 2e51, 6e48, 400e69, ["#161616", "transparent", "#400012", "#76343b"], 23, {drops:{planetcoin: {chance: 1, amount: 2}}})},
                 {index: 114, obj: new MineObject("WASP-79b", 7e51, 20e48, 1.4e72, ["#381900", "transparent", "#bd6a38", "#c4917f"], 23, {drops:{planetcoin: {chance: 0.8, amount: 3}}})},
-                {index: 124, obj: new MineObject("Hyper-Saturn", 5e6, 20e57, 25e84, ["#e5ebf0", "#ff6e00", "#ff0097", "#ff0001"], 24, {drops:{planetcoin: {chance: 1, amount: 1e12}}})},
+                {index: 124, obj: new MineObject("Hyper-Saturn", 5e6, 20e57, 25e150, ["#e5ebf0", "#ff6e00", "#ff0097", "#ff0001"], 24, {drops:{planetcoin: {chance: 1, amount: 1e12}}})},
                 {index: 134, obj: new MineObject("SUPEREARTH", 6.66e69, 36.66e66, 999.99e96, ["#240024", "#d4e2ff", "#b700a1", "#1b0097"], 22, {drops:{planetcoin: {chance: 0.01, amount: 66666}}})},
                 {index: 137, obj: new MineObject("Colossia", 10e72, 40e69, 30e102, ["#00074d", "#001eff", "#4da1b7", "#004fe5"], 24, {drops:{planetcoin: {chance: 0.2222, amount: 7777}}})},
                 {index: 138, obj: new MineObject("Giagantia", 100e72, 400e69, 500e102, ["#ff1700", "#ff7e00", "#b70035", "#7a0047"], 24, {drops:{planetcoin: {chance: 0.3333, amount: 7777}}})},
