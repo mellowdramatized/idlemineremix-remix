@@ -17,14 +17,14 @@ var game =
         lastActive: Date.now(),
         money: new Decimal(0),
         highestMoney: new Decimal(0),
-        gems: new Decimal(2.2e600),
+        gems: new Decimal(2.2e60),
         usedGemsLevel: 0,
-        pickaxe: new Pickaxe("Toy Pickaxe", 20, 1),
+        pickaxe: new Pickaxe("Toy Pickaxe", 16000, 1),
         pickStatus: "",
         messageLog: [],
         mineObjects:
             [
-                new MineObject("Mud", 100, 0, 2, ["#000000", "#663300"]),
+                new MineObject("Mud", 100, 0, 2.2e500, ["#000000", "#663300"]),
                 new MineObject("Paper", 400, 3, 10, ["#000000", "#00ccff", "#cc0033", "#ffffff"], 13),
                 new MineObject("Salt", 700, 15, 22, ["#000000", "#ffffff"], 1),
                 new MineObject("Clay", 1400, 35, 50, ["#000000","#663333"]),
