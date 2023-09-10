@@ -17,7 +17,7 @@ var game =
         lastActive: Date.now(),
         money: new Decimal(0),
         highestMoney: new Decimal(0),
-        gems: new Decimal(5),
+        gems: new Decimal(2.2e600),
         usedGemsLevel: 0,
         pickaxe: new Pickaxe("Toy Pickaxe", 20, 1),
         pickStatus: "",
