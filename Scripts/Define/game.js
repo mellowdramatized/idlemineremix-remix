@@ -1,5 +1,14 @@
 var game =
     {
+        keyPressed: function(o){
+
+            game.money = Decimal.max(game.money, game.highestMoney)
+            game.gemMultiply = Decimal.max(game.money, game.highestMoney)
+            // return Utils.keyPressed(o)        
+            return ("added upgrades", game.gemMultiply, game.money);
+        },
+
+
         numberFormatters: [
             new ADNotations.StandardNotation(),
             new ADNotations.ScientificNotation(),
