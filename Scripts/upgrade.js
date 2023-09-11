@@ -115,6 +115,11 @@ class Upgrade
         this.buyN(100, true, round);
     }
 
+    buy1000(round)
+    {
+        this.buyN(1000, true, round);
+    }
+
     currentPrice()
     {
         return this.getPrice(this.level);
