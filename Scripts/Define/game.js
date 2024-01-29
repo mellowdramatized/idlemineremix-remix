@@ -176,7 +176,7 @@ var game =
                 {index: 211, obj: new MineObject("Galaxy Megacluster", 3.1415926e147, 6.2831852e144, 3.5e195, ["#a775f6"], 33, {drops:{wisdom: {chance: 0.1, amount: 1e13}}})},
                 {index: 212, obj: new MineObject("Filament", 99.999e147, 999.999e144, 99.999e195, ["#f6e400", "#ff00d5"], 34, {drops:{wisdom: {chance: 0.1, amount: 1e14}}})},
                 {index: 213, obj: new MineObject("Sloan Great Wall", 999.999e147, 9.999e147, 1.0101e198, ["#f6e2c4", "#008f11"], 34, {drops:{planetcoin: {chance: 0.7777, amount: 22.222e18}}})},
-                {index: 214, obj: new MineObject("THE UNIVERSE", 99.999e150, 9.999e150, 99.999e198, ["#000000", "#ff0000", "#00ff00", "#0000ff"], 35, {drops:{wisdom: {chance: 1, amount: 1e15}}})}
+                {index: 214, obj: new MineObject("THE UNIVERSE", 99.999e150, 9.999e150, 99.999e1980, ["#000000", "#ff0000", "#00ff00", "#0000ff"], 35, {drops:{wisdom: {chance: 1, amount: 1e150}}})}
             ],
         currentMineObject: null,
         mineObjectLevel: 0,
@@ -240,7 +240,7 @@ var game =
                     level => new Decimal(50).mul(Decimal.pow(2.2, level + 3 * Math.max(0, level - 50))),
                     level => Decimal.pow(1.05, level),
                     {
-                        maxLevel: 600,
+                        maxLevel: 6000,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "", "/s", 2),
                         img: "upgrades/idlespeed.png"
                     }),
@@ -248,7 +248,7 @@ var game =
                     level => new Decimal(90e6).mul(Decimal.pow(2000, level * level)),
                     level => Decimal.floor(Decimal.pow(3.3, level)),
                     {
-                        maxLevel: 100,
+                        maxLevel: 1000,
                         getEffectDisplay: function()
                         {
                             let off = applyUpgrade(game.gemUpgrades.gemWaster).toNumber();
@@ -277,7 +277,7 @@ var game =
                     level => Utils.roundBase(new Decimal(250).mul(Decimal.pow(280 / 250, level)), 1),
                     level => new Decimal(1 + 0.1 * level).pow(1.1131),
                     {
-                        maxLevel: 50,
+                        maxLevel: 500,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(1),
                         img: "upgrades/blacksmithskill.png"
                     }),
@@ -285,7 +285,7 @@ var game =
                     level => new Decimal(100 + 10 * level).mul(Decimal.pow(1.01, Math.max(0, level - 50))),
                     level => new Decimal(1 + 0.15 * level).pow(1.2518),
                     {
-                        maxLevel: 100,
+                        maxLevel: 1000,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(1),
                         img: "upgrades/idlepower.png"
                     }),
@@ -293,7 +293,7 @@ var game =
                     level => new Decimal(10e3).mul(Decimal.pow(45, level)),
                     level => new Decimal(level),
                     {
-                        maxLevel: 5,
+                        maxLevel: 50,
                         getEffectDisplay: effectDisplayTemplates.thousandsStandard( "+", " Level(s)"),
                         img: "upgrades/gemwaster.png"
                     }),
@@ -301,7 +301,7 @@ var game =
                     level => (new Decimal(50 + 30 * level).pow(1.3354)).mul(Decimal.pow(1.125, Math.max(level - 30, 0))),
                     level => new Decimal(0.005 * level),
                     {
-                        maxLevel: 80,
+                        maxLevel: 800,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(2, "+"),
                         img: "upgrades/gemchance.png"
                     }),
@@ -322,7 +322,7 @@ var game =
                     level => new Decimal(4444).mul(Decimal.pow(4, level)),
                     level => new Decimal(0.05 * level),
                     {
-                        maxLevel: 15,
+                        maxLevel: 150,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(0),
                         img: "upgrades/gemoffline.png"
                     })
@@ -337,7 +337,7 @@ var game =
                     level => new Decimal(0.01 * level),
                     {
                         getEffectDisplay: effectDisplayTemplates.percentStandard(0),
-                        maxLevel: 10,
+                        maxLevel: 1000,
                         img: "upgrades/activepower.png"
                     }),
                 gemMultiply: new PCUpgrade("Gem Multiplication Multiplication", "You find multiple multiple gems, even though there should be just multiple gems",
@@ -353,13 +353,13 @@ var game =
                     {
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "x", "", 1, new Decimal(1e12)),
                         img: "upgrades/gembonus.png",
-                        maxLevel: 19
+                        maxLevel: 190
                     }),
                 gemChance: new PCUpgrade("Gem Chance III", "Increase the Chance to get Gems even more",
                     level => new Decimal(1000).mul(Decimal.pow(1.4, level)),
                     level => new Decimal(0.01 * level),
                     {
-                        maxLevel: 50,
+                        maxLevel: 500,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(2, "+"),
                         img: "upgrades/gemchance.png"
                     }),
@@ -367,7 +367,7 @@ var game =
                     level => new Decimal(10000).mul(Decimal.pow(10, level)),
                     level => new Decimal(0.05 * level),
                     {
-                        maxLevel: 10,
+                        maxLevel: 100,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(0),
                         img: "upgrades/pcoffline.png"
                     }),
@@ -376,7 +376,7 @@ var game =
                     level => new Decimal(level),
                     {
                         getEffectDisplay: effectDisplayTemplates.numberStandard(0, "+", "h"),
-                        maxLevel: 42,
+                        maxLevel: 402,
                         img: "upgrades/offlinetime.png"
                     }),
                 bulkCraft: new PCUpgrade("Bulk Crafting", "Bulk Craft Pickaxes by pressing Shift while crafting",
@@ -384,7 +384,7 @@ var game =
                     level => new Decimal(1 + level),
                     {
                         getEffectDisplay: effectDisplayTemplates.numberStandard(0, "", " at once"),
-                        maxLevel: 99,
+                        maxLevel: 990,
                         img: "upgrades/bulkcraft.png"
                     })
             },
@@ -422,20 +422,20 @@ var game =
                             return Decimal.pow(1.05 + 0.03 * level, Math.max(0, game.highestMineObjectLevel - 170)).mul(level);
                         },
                         {
-                            maxLevel: 20,
+                            maxLevel: 200,
                             getEffectDisplay: effectDisplayTemplates.numberStandard(2, "x", "", 2)
                         }),
                     gemBoostSimple: new WisdomUpgrade("Simple Gem Boost", "Just Boost Gems",
                         level => Decimal.pow(1e10, Math.pow(level, 1.2)).mul(1e10),
                         level => new Decimal(1 + 0.5 * level),
                         {
-                            maxLevel: 10
+                            maxLevel: 100
                         }),
                     damageBoostUpgrades: new WisdomUpgrade("Upgrade Damage Upgrade", "Deal More Damage depending on the amount of wisdom Upgrades bought",
                         level => Decimal.pow(1e25, level).mul(1e50),
                         level => Decimal.pow(1 + 0.05 * level, functions.getBoughtUpgrades(game.powers.upgrades)),
                         {
-                            maxLevel: 10,
+                            maxLevel: 100,
                             getEffectDisplay: effectDisplayTemplates.numberStandard(2, "x", "", 2)
                         }),
                     powerPowerPower: new WisdomUpgrade("Power Power Power!", "Learn more as you learn more! Increase the Power of Power Power Upgrades",
@@ -447,7 +447,7 @@ var game =
                         level => Decimal.pow(1e25, level * level).mul(1e25),
                         level => new Decimal(0.5 + 0.5 * (1 - Math.pow(0.9, level))),
                         {
-                            maxLevel: 10,
+                            maxLevel: 100,
                             getEffectDisplay: effectDisplayTemplates.numberStandard(2, "x^", "", 2)
                         })
                 },
