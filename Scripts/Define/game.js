@@ -203,7 +203,7 @@ var game =
                     level => new Decimal(1e6).mul(Decimal.pow(5, level)),
                     level => Decimal.floor(Math.random() < 0.25 && level > 0 ? Math.random() * (level) : 0),
                     {
-                        maxLevel: 10,
+                        maxLevel: 1000,
                         getEffectDisplay: function ()
                         {
                             if (this.level === this.maxLevel)
@@ -218,7 +218,7 @@ var game =
                     level => new Decimal(200).mul(Decimal.pow(2.5, level)),
                     level => new Decimal(0.02 + 0.004 * level).add(applyUpgrade(game.gemUpgrades.gemChance)).add(applyUpgrade(game.planetCoinUpgrades.gemChance)),
                     {
-                        maxLevel: 20,
+                        maxLevel: 2000,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(1),
                         img: "upgrades/gemchance.png"
                     }),
@@ -240,7 +240,7 @@ var game =
                     level => new Decimal(50).mul(Decimal.pow(2.2, level + 3 * Math.max(0, level - 50))),
                     level => Decimal.pow(1.05, level),
                     {
-                        maxLevel: 6000,
+                        maxLevel: 600000,
                         getEffectDisplay: effectDisplayTemplates.numberStandard(2, "", "/s", 2),
                         img: "upgrades/idlespeed.png"
                     }),
@@ -248,7 +248,7 @@ var game =
                     level => new Decimal(90e6).mul(Decimal.pow(2000, level * level)),
                     level => Decimal.floor(Decimal.pow(3.3, level)),
                     {
-                        maxLevel: 1000,
+                        maxLevel: 10000,
                         getEffectDisplay: function()
                         {
                             let off = applyUpgrade(game.gemUpgrades.gemWaster).toNumber();
@@ -277,7 +277,7 @@ var game =
                     level => Utils.roundBase(new Decimal(250).mul(Decimal.pow(280 / 250, level)), 1),
                     level => new Decimal(1 + 0.1 * level).pow(1.1131),
                     {
-                        maxLevel: 500,
+                        maxLevel: 5000,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(1),
                         img: "upgrades/blacksmithskill.png"
                     }),
@@ -285,7 +285,7 @@ var game =
                     level => new Decimal(100 + 10 * level).mul(Decimal.pow(1.01, Math.max(0, level - 50))),
                     level => new Decimal(1 + 0.15 * level).pow(1.2518),
                     {
-                        maxLevel: 1000,
+                        maxLevel: 100000,
                         getEffectDisplay: effectDisplayTemplates.percentStandard(1),
                         img: "upgrades/idlepower.png"
                     }),
@@ -293,7 +293,7 @@ var game =
                     level => new Decimal(10e3).mul(Decimal.pow(45, level)),
                     level => new Decimal(level),
                     {
-                        maxLevel: 50,
+                        maxLevel: 50000,
                         getEffectDisplay: effectDisplayTemplates.thousandsStandard( "+", " Level(s)"),
                         img: "upgrades/gemwaster.png"
                     }),
